@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task/pages/signup.dart';
 
 header(context) {
   return const Column(
@@ -41,7 +42,10 @@ inputField(context) {
       ),
       const SizedBox(height: 10),
       ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SignupPage()));
+        },
         style: ElevatedButton.styleFrom(
           shape: const StadiumBorder(),
           padding: const EdgeInsets.symmetric(vertical: 16),
@@ -72,12 +76,18 @@ signup(context) {
     children: [
       Text("Dont have an account?  "),
       TextButton(
-          onPressed: () {},
-          child: const Text(
-            "Sign Up",
-            style:
-                TextStyle(color: Color.fromARGB(255, 20, 2, 99), fontSize: 16),
-          ))
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => SignupPage()));
+        },
+        child: const Text(
+          "sign up",
+          style: TextStyle(
+            color: Color.fromARGB(255, 6, 17, 122),
+            fontSize: 18,
+          ),
+        ),
+      )
     ],
   );
 }

@@ -168,7 +168,10 @@ class SignupPage extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.only(top: 3, left: 3),
                     child: ElevatedButton(
-                      onPressed: _signUp,
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => LoginPage()));
+                      },
                       child: const Text(
                         "Sign up",
                         style: TextStyle(fontSize: 20, color: Colors.white),
@@ -189,13 +192,15 @@ class SignupPage extends StatelessWidget {
                       const Text("Already have an account?"),
                       TextButton(
                         onPressed: () {
-                          _goToLoginPage(context);
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => LoginPage()));
                         },
                         child: const Text(
                           "Login",
                           style: TextStyle(
-                              color: Color.fromARGB(255, 6, 17, 122),
-                              fontSize: 18),
+                            color: Color.fromARGB(255, 6, 17, 122),
+                            fontSize: 18,
+                          ),
                         ),
                       )
                     ],
