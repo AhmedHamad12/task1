@@ -60,6 +60,20 @@ class SignupPage extends StatelessWidget {
       }
     }
 
+    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+    void _submitForm() {
+      if (_formKey.currentState!.validate()) {
+        final String username = usernameController.text;
+        final String email = emailController.text;
+        final String password = passwordController.text;
+
+        // Process the valid form data (e.g., submit to backend)
+        print('Username: $username');
+        print('Email: $email');
+        print('Password: $password');
+      }
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -156,10 +170,7 @@ class SignupPage extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.only(top: 3, left: 3),
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => LoginPage()));
-                      },
+                      onPressed: _submitForm,
                       child: const Text(
                         "Sign up",
                         style: TextStyle(fontSize: 20, color: Colors.white),

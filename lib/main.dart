@@ -15,7 +15,11 @@ void main() async {
   bool onboarding = sharedPreferences.getBool('onboarding') ?? false;
 
   runApp(MaterialApp(
-    title: 'Login App',
-    home: onboarding ? LoginPage() : const OnBoardingPage(),
+    home: Navigator(
+      pages: [
+        MaterialPage(child: LoginPage()),
+      ],
+      onPopPage: (route, result) => route.didPop(result),
+    ),
   ));
 }
