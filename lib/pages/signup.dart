@@ -6,51 +6,39 @@ class SignupPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController usernameController = TextEditingController();
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    TextEditingController confirmPasswordController = TextEditingController();
-
-    void _goToLoginPage(BuildContext context) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => LoginPage(),
-        ),
-      );
-    }
+    final TextEditingController usernameController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+    final TextEditingController confirmPasswordController =
+        TextEditingController();
 
     void _signUp() {
-      String username = usernameController.text.trim();
-      String email = emailController.text.trim();
-      String password = passwordController.text;
-      String confirmPassword = confirmPasswordController.text;
-
-      if (username.isEmpty ||
-          email.isEmpty ||
-          password.isEmpty ||
-          confirmPassword.isEmpty) {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text("Error"),
-              content: Text("Please fill all fields"),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text("OK"),
-                ),
-              ],
-            );
-          },
-        );
-        return;
+      String? validateEmail(String? value) {
+        if (value == null || value.isEmpty || !value.contains('@')) {
+          return 'Please enter a valid email';
+        }
+        return null;
       }
 
-      if (password != confirmPassword) {
+      String? validateUsername(String? value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter a username';
+        } else if (value.length < 4) {
+          return 'Username must be at least 4 characters';
+        }
+        return null;
+      }
+
+      String? validatePassword(String? value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter a password';
+        } else if (value.length < 6) {
+          return 'Password must be at least 6 characters';
+        }
+        return null;
+      }
+
+      if (passwordController != confirmPasswordController) {
         showDialog(
           context: context,
           builder: (BuildContext context) {

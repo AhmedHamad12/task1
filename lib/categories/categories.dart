@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task/pages/signup.dart';
 
+final TextEditingController _emailController = TextEditingController();
+final TextEditingController _passwordController = TextEditingController();
 header(context) {
   return const Column(
     children: [
@@ -18,6 +20,7 @@ inputField(context) {
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
       TextField(
+        controller: _emailController,
         decoration: InputDecoration(
             hintText: "Username",
             border: OutlineInputBorder(
@@ -29,6 +32,7 @@ inputField(context) {
       ),
       const SizedBox(height: 10),
       TextField(
+        controller: _passwordController,
         decoration: InputDecoration(
           hintText: "Password",
           border: OutlineInputBorder(
@@ -43,8 +47,16 @@ inputField(context) {
       const SizedBox(height: 10),
       ElevatedButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SignupPage()));
+          String email = _emailController.text.trim();
+          String password = _passwordController.text.trim();
+          if (email.isEmpty || !email.contains('@')) {
+            showErrorDialog(context, 'Invalid email');
+            return;
+          }
+          if (password.isEmpty || password.length < 6) {
+            showErrorDialog(context, 'Password too short');
+            return;
+          }
         },
         style: ElevatedButton.styleFrom(
           shape: const StadiumBorder(),
@@ -89,5 +101,25 @@ signup(context) {
         ),
       )
     ],
+  );
+}
+
+void showErrorDialog(BuildContext context, String message) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Error'),
+        content: Text(message),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Text('OK'),
+          ),
+        ],
+      );
+    },
   );
 }
