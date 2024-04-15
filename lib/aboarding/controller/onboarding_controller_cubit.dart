@@ -33,13 +33,13 @@ class OnboardingControllercubit extends Cubit<OnboardingControllerState> {
       image: 'assests/images/logo.png',
       title: 'first',
       subtitle: 'first screen',
-      color: Colors.green,
+      color: const Color.fromARGB(255, 41, 93, 43),
     ),
     onboardingModel(
         image: 'assests/images/logo.png',
         title: 'second',
         subtitle: 'second screen',
-        color: Colors.blue),
+        color: const Color.fromARGB(255, 115, 138, 157)),
     onboardingModel(
         image: 'assests/images/logo.png',
         title: 'third',
