@@ -30,18 +30,18 @@ class OnboardingControllercubit extends Cubit<OnboardingControllerState> {
 
   List data = [
     onboardingModel(
-      image: 'assests/images/b.jpg',
+      image: 'assests/images/logo.png',
       title: 'first',
       subtitle: 'first screen',
       color: Colors.green,
     ),
     onboardingModel(
-        image: 'assests/images/bbb (1).jpg',
+        image: 'assests/images/logo.png',
         title: 'second',
         subtitle: 'second screen',
         color: Colors.blue),
     onboardingModel(
-        image: 'assests/images/bbb (2).jpg',
+        image: 'assests/images/logo.png',
         title: 'third',
         subtitle: 'third screen',
         color: Colors.red),
