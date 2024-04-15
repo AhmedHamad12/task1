@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:task/aboarding/model/onboarding_model.dart';
 import 'package:task/pages/login.dart';
@@ -28,22 +28,6 @@ class OnboardingControllercubit extends Cubit<OnboardingControllerState> {
     );
   }
 
-  /*List images = [
-    'assests/images/b.jpg',
-    'assests/images/bbb (1).jpg',
-    'assests/images/bbb (2).jpg',
-  ];
-  List titles = [
-    'first',
-    'second',
-    'third',
-  ];
-  List color = [Colors.green, Colors.blue, Colors.red];
-  List subtitles = [
-    'first screen',
-    'second screen',
-    'third screen',
-  ];*/
   List data = [
     onboardingModel(
       image: 'assests/images/b.jpg',
