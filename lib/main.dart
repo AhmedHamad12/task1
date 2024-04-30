@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+// <<<<<<< amged-elsayed
+// import 'package:task/dashboard/view/pages/dashboard_page.dart';
 
-import 'package:task/categories/categories.dart';
-import 'package:task/dashboard/view/pages/dashboard_page.dart';
+// // import 'package:task/categories/categories.dart';
+// // import 'package:task/dashboard/view/pages/dashboard_page.dart';
 
-import 'package:task/categories/categories.dart';
+// // // import 'package:task/categories/categories.dart';
+// =======
+
+// import 'package:task/categories/categories.dart';
+// import 'package:task/dashboard/view/pages/dashboard_page.dart';
+
+// import 'package:task/categories/categories.dart';
+// >>>>>>> main
 
 import 'package:task/pages/login.dart';
 // import 'package:task/pages/signup.dart';
@@ -19,6 +28,7 @@ void main() async {
   bool onboarding = sharedPreferences.getBool('onboarding') ?? false;
 
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Navigator(
       pages: [
         MaterialPage(child: Dashboard()),
