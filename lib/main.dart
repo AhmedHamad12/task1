@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task/categories/categories.dart';
+import 'package:task/dashboard/view/pages/dashboard_page.dart';
 
 import 'package:task/pages/login.dart';
 import 'package:task/pages/signup.dart';
@@ -17,7 +18,7 @@ void main() async {
   runApp(MaterialApp(
     home: Navigator(
       pages: [
-        MaterialPage(child: LoginPage()),
+        MaterialPage(child: Dashboard()),
       ],
       onPopPage: (route, result) => route.didPop(result),
     ),
