@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task/pages/ForgetPassPage.dart';
 import 'package:task/pages/signup.dart';
 
 final TextEditingController _emailController = TextEditingController();
@@ -74,7 +75,10 @@ inputField(context) {
 
 forgotPassword(context) {
   return TextButton(
-    onPressed: () {},
+    onPressed: () {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => ForgetPassPage()));
+    },
     child: const Text(
       "Forgot password ? ",
       style: TextStyle(color: Color.fromARGB(255, 2, 4, 128)),
