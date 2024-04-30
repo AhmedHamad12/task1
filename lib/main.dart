@@ -16,6 +16,7 @@ void main() async {
   bool onboarding = sharedPreferences.getBool('onboarding') ?? false;
 
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Navigator(
       pages: [
         MaterialPage(child: Dashboard()),

@@ -10,7 +10,6 @@ class Dashboard extends StatelessWidget {
   Dashboard({super.key});
   final _pageControlller = PageController();
 
-  @override
   void dispose() {
     _pageControlller.dispose();
   }
