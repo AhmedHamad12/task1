@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar_item.dart';
@@ -20,14 +19,12 @@ class Dashboard extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(backgroundColor: Color(0xFF345069),),
+        appBar: AppBar(
+          backgroundColor: Color(0xFF345069),
+        ),
         body: PageView(
           controller: _pageControlller,
-          children: const <Widget>[
-            HomePage(),
-            UserPage(),
-            ServicePage()
-          ],
+          children: const <Widget>[HomePage(), UserPage(), ServicePage()],
         ),
         extendBody: true,
         bottomNavigationBar: RollingBottomBar(
@@ -40,7 +37,7 @@ class Dashboard extends StatelessWidget {
                 label: 'Home', activeColor: Color.fromARGB(255, 0, 0, 0)),
             RollingBottomBarItem(Icons.person,
                 label: 'Users', activeColor: Color.fromARGB(255, 0, 0, 0)),
-           RollingBottomBarItem(Icons.category,
+            RollingBottomBarItem(Icons.category,
                 label: 'Service', activeColor: Color.fromARGB(255, 0, 0, 0)),
           ],
           enableIconRotation: true,
