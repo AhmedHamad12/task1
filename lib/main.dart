@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:task/dashboard/view/pages/dashboard_page.dart';
+// <<<<<<< amged-elsayed
+// import 'package:task/dashboard/view/pages/dashboard_page.dart';
+
+// // import 'package:task/categories/categories.dart';
+// // import 'package:task/dashboard/view/pages/dashboard_page.dart';
+
+// // // import 'package:task/categories/categories.dart';
+// =======
 
 // import 'package:task/categories/categories.dart';
 // import 'package:task/dashboard/view/pages/dashboard_page.dart';
 
-// // import 'package:task/categories/categories.dart';
+// import 'package:task/categories/categories.dart';
+// >>>>>>> main
 
 import 'package:task/pages/login.dart';
 // import 'package:task/pages/signup.dart';
