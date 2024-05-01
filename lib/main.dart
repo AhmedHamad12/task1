@@ -20,6 +20,7 @@ import 'package:task/dashboard/view/pages/dashboard_page.dart';
 
 // import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:task/pages/login.dart';
 // import 'package:task/aboarding/view/page/onboarding_page.dart';
 
 void main() async {
@@ -31,7 +32,7 @@ void main() async {
     debugShowCheckedModeBanner: false,
     home: Navigator(
       pages: [
-        MaterialPage(child: Dashboard()),
+        MaterialPage(child: LoginPage()),
       ],
       onPopPage: (route, result) => route.didPop(result),
     ),
