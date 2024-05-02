@@ -1,16 +1,14 @@
-                                  //main to run dasbourd// 
+//main to run dasbourd//
 import 'package:flutter/material.dart';
 
 import 'package:task/dashboard/view/pages/dashboard_page.dart';
-
-
 
 // import 'package:task/pages/login.dart';
 // import 'package:task/pages/signup.dart';
 // import 'package:task/pages/forgetpassPage.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-;
+
 // import 'package:task/aboarding/view/page/onboarding_page.dart';
 
 void main() async {
@@ -28,10 +26,6 @@ void main() async {
     ),
   ));
 }
-
-
-
-
 
 ////////////////////// main to run pin code ////////////////////////////////////////////
 // import 'package:device_preview/device_preview.dart';
