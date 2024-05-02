@@ -32,7 +32,7 @@ void main() async {
     debugShowCheckedModeBanner: false,
     home: Navigator(
       pages: [
-        MaterialPage(child: LoginPage()),
+        MaterialPage(child: Dashboard()),
       ],
       onPopPage: (route, result) => route.didPop(result),
     ),

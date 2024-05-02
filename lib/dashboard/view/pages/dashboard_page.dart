@@ -24,7 +24,7 @@ class Dashboard extends StatelessWidget {
         ),
         body: PageView(
           controller: _pageControlller,
-          children: const <Widget>[HomePage(), UserPage(), ServicePage()],
+          children: const <Widget>[HomePage(), UsersPage(), ServicePage()],
         ),
         extendBody: true,
         bottomNavigationBar: RollingBottomBar(
