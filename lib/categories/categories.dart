@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task/pages/EmailPage.dart';
 import 'package:task/pages/ForgetPassPage.dart';
 import 'package:task/pages/signup.dart';
 
@@ -77,7 +78,7 @@ forgotPassword(context) {
   return TextButton(
     onPressed: () {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => ForgetPassPage()));
+          .push(MaterialPageRoute(builder: (context) => EmailPage()));
     },
     child: const Text(
       "Forgot password ? ",

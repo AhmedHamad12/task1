@@ -15,11 +15,16 @@ class VerivicationPage extends StatelessWidget {
         builder: (context, State) {
           final VerificationCubit cubit = context.read<VerificationCubit>();
           return Scaffold(
-            appBar: AppBar(),
+            appBar: AppBar(
+              title: Text("Verification Code"),
+            ),
             body: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Enter Your Code"),
+                Text(
+                  "Enter Your Code",
+                  style: TextStyle(fontSize: 15),
+                ),
                 PinCodeTextField(
                   mainAxisAlignment: MainAxisAlignment.center,
                   appContext: context,
@@ -55,7 +60,6 @@ class VerivicationPage extends StatelessWidget {
                   textStyle: const TextStyle(fontSize: 20, height: 1.6),
                   backgroundColor: Colors.blue.shade50,
                   enableActiveFill: true,
-
                   controller: cubit.pincodecontroller,
                   keyboardType: TextInputType.number,
                   boxShadows: const [
@@ -68,13 +72,13 @@ class VerivicationPage extends StatelessWidget {
                   onCompleted: (v) {
                     debugPrint("Completed");
                   },
-                  // onTap: () {
-                  //   print("Pressed");
-                  // },
                   onChanged: (value) {},
                 ),
                 IconButton(
-                    onPressed: cubit.onTapConfirm, icon: const Icon(Icons.done))
+                  onPressed: () =>
+                      cubit.onTapConfirm(context), // Pass the context
+                  icon: const Icon(Icons.done),
+                )
               ],
             ),
           );
